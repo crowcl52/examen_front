@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "./assets/lib/animated.scss";
+
+
+html, body { height: 100%; }
+
+.main-section{
+    height: 100vh;
+    background-image: url('./assets/web-dark.png');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.auth-container{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-box{
+    width: 450px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+    .auth-box{
+        width: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+    }
+  }

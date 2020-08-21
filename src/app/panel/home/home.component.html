@@ -1,0 +1,29 @@
+<mat-toolbar color="primary">
+
+    <span>My App</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu" class="width-auto mr-2">
+        <mat-icon>menu</mat-icon> {{user.name}}
+    </button>
+    <div>
+        <img width="50px" src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="avatar">
+    </div>
+</mat-toolbar>
+
+<section class="container">
+    <div class="row mt-3 bg-secondary rounded align-items-center p-2 animated pulse">
+        <div class="col-6 text-center">
+            <img src="https://www.pavilionweb.com/wp-content/uploads/2017/03/man-300x300.png" alt="avatar">
+        </div>
+        <div class="col-6">
+            <h1 class="text-white text-center"> {{user.name}} </h1>
+            <h1 class="text-white text-center"> {{user.email}} </h1>
+            <h1 class="text-white text-center"> {{user.phone}} </h1>
+        </div>
+    </div>
+</section>
+
+<!-- menu -->
+<mat-menu #menu="matMenu">
+    <button mat-menu-item [routerLink]="['/login']" > <mat-icon>exit_to_app</mat-icon> Salir</button>
+</mat-menu>

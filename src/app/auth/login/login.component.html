@@ -1,0 +1,37 @@
+<section class="main-section">
+
+    <div class="auth-box border shadow rounded mt-5 animated pulse bg-white">
+        <div class="row border-bottom col-12 text-center p-3">
+            <div class="col-12 text-center">
+                <h1> Iniciar sesión </h1>
+            </div>
+        </div>
+        <form [formGroup]="loginFG" class="col-12" (ngSubmit)="register()">
+            <div class="auth-container">
+                <mat-form-field class="col-12">
+                    <input matInput formControlName="email" required placeholder="email">
+                </mat-form-field>
+
+                <mat-form-field class="col-12">
+                    <input matInput formControlName="password" placeholder="Password" name="password" [type]="hide ? 'password' : 'text'">
+                    <a mat-icon-button matSuffix (click)="hide = !hide" >
+                        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </a>
+                </mat-form-field>
+
+                <!-- Submit Button -->
+                <div class="col-12">
+                    <button [disabled]="!loginFG.valid" type="submit" class="col-12 btn btn-primary text-white"
+                        mat-button>Login</button>
+                        <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+                    <p class="full-width text-center mt-2"> ¿No tienes cuenta?
+                        <a class="txt-main" [routerLink]="['/register']"> Registrate </a>
+                    </p>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+
+</section>
